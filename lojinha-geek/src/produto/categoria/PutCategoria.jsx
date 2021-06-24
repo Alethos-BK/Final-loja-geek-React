@@ -12,23 +12,13 @@ function PutCategoria() {
     const HandleChangeDescricao = (e) => setDescricao(e.currentTarget.value);
     const HandleChangeId = (e) => setId(e.currentTarget.value);
 
-    const categ = {
-
-        nome: nome,
-        descricao: descricao
-    }
-
-    useEffect(() =>{
-        console.log(nome);
-        categ.nome = nome;
-        categ.descricao = descricao;
-
-    }, [nome, descricao, id])
-
     const atualizarCategoria = () => {
-        setCategoria(categ);
-        axios.put(`http://localhost:8080/api/categorias/${id}`, categoria)
-        console.log(categoria);
+        const novo = {
+          nome,
+          descricao
+        }
+        axios.put(`http://localhost:8080/api/categorias/${id}`, novo).then((response) => setCategoria(response.data))
+     
     }
 
     return (
