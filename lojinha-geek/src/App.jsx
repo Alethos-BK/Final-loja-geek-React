@@ -68,6 +68,8 @@ function App() {
                */}
        </Switch>
           </BrowserRouter>
+
+          <Categoria />
     
       </>
       );
@@ -75,4 +77,4 @@ function App() {
     }
     
     export default App;
-    
+      
