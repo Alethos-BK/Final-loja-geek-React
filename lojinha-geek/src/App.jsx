@@ -6,6 +6,7 @@ import { Button, Navbar, NavDropdown, Container, Nav, FormControl, Form} from 'r
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
 import Produto from './produto/Produto';
+import GetClientePorId from './cliente/GetClientePorId';
 // import Canecas from './Canecas';
 // import Roupas from './Roupas';
 // import Funkos from './Funkos';
@@ -71,8 +72,9 @@ function App() {
        </Switch>
           </BrowserRouter>
 
-          <Categoria />
-    
+          {/* <Produto /> */}
+          <GetClientePorId />
+
       </>
       );
     

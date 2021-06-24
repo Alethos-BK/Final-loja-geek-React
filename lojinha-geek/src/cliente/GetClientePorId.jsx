@@ -4,24 +4,32 @@ import axios from 'axios';
 function GetClientePorId() {
 
     const [cliente, setCliente] = useState([]);
-    const [id, setNome] = useState('');
+    const [id, setId] = useState('');
 
     const obterCliente = () => {
         axios.get(`http://localhost:8080/api/clientes/${id}`).then((response) => {
-            setCliente(response.data);
-            console.log(response.data)
+          console.log(response.data)
+          setCliente(response.data);
         })
     }
 
-    const handleChange = (e) => setNome(e.target.value)
     return (
         <>
-        ID
-            <input type="text" value={id} onChange={handleChange}/>
+          
+            <input type="text" value={id} onChange= {(e) => setId(e.target.value)}/>
             <button onClick={obterCliente}>Obter CLiente Por ID</button>
-            {/* {cliente.map((c)=> (<h1>a</h1>))} */}
+
+            {/* {cliente.map((cl => (
+                <p key={cl.id}>
+                    Email: {cl.email}
+                    Nome: {cl.nome}
+                </p>
+            
+            )))} */}
+          
+          
         </>
-    );
+    )
 }
 
 export default GetClientePorId;
