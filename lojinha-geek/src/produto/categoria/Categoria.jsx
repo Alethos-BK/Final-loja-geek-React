@@ -2,6 +2,7 @@ import React from "react";
 import GetCategoria from "./GetCategoria";
 import PostCategoria from "./PostCategoria";
 import PutCategoria from "./PutCategoria";
+import DeleteCategoria from "./DeleteCategoria";
 
 function Categoria(){
   
@@ -10,7 +11,7 @@ function Categoria(){
       <GetCategoria/>
       <PostCategoria/>
       <PutCategoria/>
-      
+      <DeleteCategoria/>
     </>
   )
 }
