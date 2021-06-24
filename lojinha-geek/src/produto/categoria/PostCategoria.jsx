@@ -10,21 +10,17 @@ function PostCategoria(){
     const HandleChangeNome = (e) => setNome(e.currentTarget.value);
     const HandleChangeDescricao = (e) => setDescricao(e.currentTarget.value);
 
-    const categ = {
-        nome: nome,
-        descricao: descricao
-    }
 
-    useEffect(() =>{
-        console.log(nome);
-        categ.nome = nome;
-        categ.descricao = descricao;
-
-    }, [nome, descricao])
 
     const adicionarCategoria = () => {
-        setCategoria(categ);
-        axios.post(`http://localhost:8080/api/categorias`, categoria)
+        const novo = {
+            nome,
+            descricao
+        }
+       
+        axios.post(`http://localhost:8080/api/categorias`, novo).then((response) => {
+            setCategoria(response.data)
+        })
     }
 
     return (
