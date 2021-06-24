@@ -16,8 +16,8 @@ function GetClientePorId() {
     const handleChange = (e) => setNome(e.target.value)
     return (
         <>
-        ID
-            <input type="text" value={id} onChange={handleChange}/>
+        
+            <input type="number" value={id} onChange={handleChange}/>
             <button onClick={obterCliente}>Teste</button>
         </>
     );

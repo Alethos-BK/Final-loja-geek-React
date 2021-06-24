@@ -7,13 +7,14 @@ function GetCategoria(){
 
   const obterTodasAsCategorias = () => {
 		axios.get(`http://localhost:8080/api/categorias`).then((response) =>{
+			console.log(response.status)
 			setCategoria(response.data)
 		});
 	}
 
 	return (
 		<>
-		  <h1>Categoria por id</h1>
+		  <h1>Categorias</h1>
 			<button onClick={obterTodasAsCategorias}> Categoria</button>
 			{categoria.map((cat) => (
 				<p key={cat.id}> Nome: {cat.nome} Descricão: {cat.descricao}</p>

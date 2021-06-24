@@ -7,6 +7,7 @@ import Home from "./Home"
 import Dropdown from 'react-bootstrap/Dropdown'
 import { Button, Navbar, NavDropdown, Container, Nav, FormControl, Form} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Produto from './produto/Produto';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
     </Navbar>
     <Home />
     <Categoria />
+    <Produto />
   </>
   );
 
