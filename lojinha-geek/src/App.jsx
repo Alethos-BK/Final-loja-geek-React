@@ -7,22 +7,28 @@ import Home from "./Home"
 import Dropdown from 'react-bootstrap/Dropdown'
 import { Button, Navbar, NavDropdown, Container, Nav, FormControl, Form} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
+import Produtos from './Produtos';
 
 
 function App() {
 
   return (
 <>
+<BrowserRouter> 
   <Navbar bg="light" expand="lg">
     <Container>
       <Navbar.Brand href="#home">LOJINHA</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#home">Inicio</Nav.Link>
-          <Nav.Link href="#link">Produtos</Nav.Link>
+        <Nav.Link> <Link to="/Home">Inicio</Link></Nav.Link>
+          <Nav.Link> <Link to="/Produtos">Produtos</Link></Nav.Link>
+          
+
           <NavDropdown title="Categoria" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Roupas</NavDropdown.Item>
+
+            
             <NavDropdown.Item href="#action/3.2">Jogos</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Acessórios</NavDropdown.Item>
             <NavDropdown.Divider />
@@ -36,8 +42,29 @@ function App() {
     </Navbar.Collapse>
     </Container>
     </Navbar>
-    <Home />
-    <Categoria />
+    
+    
+    
+        <Switch>
+          <Route path="/Home" exact>
+            <Home />
+            
+            
+          </Route>
+            
+          <Route path="/Produtos" exact>
+            <Produtos/>
+            </Route>
+
+            <Route path="/Categoria" exact>
+            <Categoria/>
+
+            </Route>
+          
+        </Switch>
+      </BrowserRouter>
+
+
   </>
   );
 
