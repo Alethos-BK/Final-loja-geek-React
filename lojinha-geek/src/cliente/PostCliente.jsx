@@ -13,13 +13,13 @@ function PostCliente () {
 
     const adicionarPessoa = () => {
         const novo = {
-        email,
-        nome,
-        senha,
-        cpf,
-        telefone,
-        endereco: { cep }
-    };
+            email,
+            nome,
+            senha,
+            cpf,
+            telefone,
+            endereco: { cep }
+        };
         
         axios.post("http://localhost:8080/api/clientes", novo).then(response => {
           console.log(response.data);
@@ -28,7 +28,8 @@ function PostCliente () {
     }
 
     return (
-        <>
+        <div>
+            <h1>Cliente</h1>
          <label htmlFor="email">Email</label>
             <input type="email" name="email" value={email} onChange={(e) => setEmail(e.currentTarget.value)}/>
 
@@ -47,8 +48,8 @@ function PostCliente () {
             <label htmlFor="telefone">Cep</label>
             <input type="text" name="cep" value={cep}  onChange={(e) => setCep(e.currentTarget.value)}/> 
         
-            <button onClick={adicionarPessoa}>Enviar</button>
-        </>
+            <button onClick={adicionarPessoa}>Criar Cliente</button>
+        </div>
     );
 }
 

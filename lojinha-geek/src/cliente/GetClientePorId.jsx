@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+//TODO: não funfa
 function GetClientePorId() {
 
     const [cliente, setCliente] = useState([]);
@@ -16,9 +16,10 @@ function GetClientePorId() {
     const handleChange = (e) => setNome(e.target.value)
     return (
         <>
-        
-            <input type="number" value={id} onChange={handleChange}/>
-            <button onClick={obterCliente}>Teste</button>
+        ID
+            <input type="text" value={id} onChange={handleChange}/>
+            <button onClick={obterCliente}>Obter CLiente Por ID</button>
+            {/* {cliente.map((c)=> (<h1>a</h1>))} */}
         </>
     );
 }

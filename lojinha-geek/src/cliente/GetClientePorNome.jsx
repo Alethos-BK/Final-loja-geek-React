@@ -16,11 +16,12 @@ function GetClientePorNome() {
     const handleChange = (e) => setNome(e.target.value)
 
     return (
-        <>
+        <div>
         Nome
             <input type="text" value={nome} onChange={handleChange}/>
-            <button onClick={obterCliente}>Teste</button>
-        </>
+            <button onClick={obterCliente}>Obter CLiente Por Nome</button>
+            {cliente.map((c)=> (<h2>{c.nome}</h2>))}
+        </div>
     );
 }
 

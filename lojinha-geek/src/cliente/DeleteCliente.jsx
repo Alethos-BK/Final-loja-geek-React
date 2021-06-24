@@ -16,7 +16,7 @@ function DeleteCliente() {
     return(
         <>
         Apagar
-            <button onClick={apagarCliente}>Apagar</button>
+            <button onClick={apagarCliente}>Apagar por ID</button>
             <input type="text" value={id} onChange={handleChange}/>
         </>
     );
