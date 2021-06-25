@@ -5,7 +5,7 @@ import PostPedido from "./PostPedido";
 function Carrinho(props) {
 
   const [produtos, setProdutos] =React.useState([]);
-  const [produtosId, setProdutosId]= React.useState("")
+  const [produtosId, setProdutosId]= React.useState(1)
   const [carrinho, setCarrinho] = React.useState([]);
 
   const { total } = props;
@@ -25,15 +25,18 @@ function Carrinho(props) {
   };
 
 
-  const addCarrinho = (produtos) => {
-    setCarrinho((anterior) => [...anterior, produtos]);
+  const addCarrinho = (prod) => {
+    setCarrinho((anterior) => [...anterior, prod]);
     setProdutosId(props.id)
-
+    produtos.push(produtosId);
     console.log(produtosId)
+    console.log(produtos)
     //axios.post("/pedido", livro).then()
   };
 
-  // const guardarNoLocalStorage = localStorage.setItem(produtosId);
+  const guardarNoLocalStorage = localStorage.setItem(produtosId, produtos);
+
+  
 
   return (
     <div>
@@ -47,6 +50,13 @@ function Carrinho(props) {
       <button onClick={PostProduto}>aa</button>
      
     
+
+
+      <button onClick={() => addCarrinho(produtos)}>add</button>
+      
+      {/* <button onClick={PostProduto}></button> */}
+     
+    {/* <PostPedido listaIds={produtosId}/> */}
 
     </div>
 

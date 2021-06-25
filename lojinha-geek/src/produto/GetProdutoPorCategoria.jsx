@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import Carrinho from '../pedido/Carrinho';
 
 function GetProdutoPorCategoria(props){
 
-    const [ produto, setProduto] = useState({});
+    const [ produto, setProduto] = useState([]);
     const [categoria, setCategoria] = useState([]);
     const [categoriaId, setCategoriaId] = useState('');
     
@@ -29,7 +30,7 @@ function GetProdutoPorCategoria(props){
     return (
 
       //mapeie categoria e escreva categorias
-      <>
+    <>
 
       {/* {categoria.map((categ) => (
         categ.nome
@@ -37,7 +38,7 @@ function GetProdutoPorCategoria(props){
 
       ))} */}
 
-        <select value=""   name="select" onChange={(e) => setCategoriaId(e.currentTarget.value)}>
+    <select value={categoriaId}   name="select" onChange={(e) => setCategoriaId(e.currentTarget.value)}>
                 
         {categoria.map((categ) =>
         {
@@ -54,19 +55,24 @@ function GetProdutoPorCategoria(props){
 
 
 
-  	  {produto.map((p) => (<p>a</p>))}
+  	  {produto.map((prod) => (
+				<div key={prod.id} style={{
+          border: "1px solid black",
+          textAlign: "center",
+          marginTop: "10px"
+        }}> 
+          <h3>{prod.nome}</h3> 
+          <h1>Id {prod.id}</h1>
+          Descricão: {prod.descricao}
+          <h6>Em stoque:{prod.estoque}</h6> 
+          <h6>Categoria: { prod.categoria ? prod.categoria.nome : "Produto sem categoria"}</h6>
+          <img src={prod.imagem} alt={prod.nome} />
+          <h4>R${prod.preco}</h4>
+          Data de cadastro: {prod.dataDeCadastro} 
 
-    {/* {produto.map((prod) => (
-				<p key={prod.id}> 
-                Nome: {prod.nome} 
-                Descricão: {prod.descricao}
-                Preço: R${prod.preco} 
-                Estoque: {prod.estoque} 
-                Data de cadastro: {prod.dataDeCadastro} 
-                Categoria: { prod.categoria ? prod.categoria.nome : "Produto sem categoria"}
-                </p>
-			))} */}
-
+          <Carrinho id={prod.id}/>
+          </div>
+			))}
   </>
     )
 

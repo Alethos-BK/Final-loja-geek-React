@@ -32,11 +32,6 @@ function GetClientePorId() {
         </div>
     );
 
-        
-    
-
-
-
  }
 
 export default GetClientePorId;

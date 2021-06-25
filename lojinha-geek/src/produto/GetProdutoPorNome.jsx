@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function GetProdutoPorNome() {
+function GetProdutoPorNome(props) {
 
 
     const [produto, setProduto] = useState('');
     const [produtos, setProdutos] = useState([]);
-
 
     const obterProduto = () => {    
         axios.get(`http://localhost:8080/api/produtos/nome/${produto}`).then((response) => {
@@ -15,9 +14,6 @@ function GetProdutoPorNome() {
             
         })
     }
-
-
-   
 
     const handleChange = (e) => {
         setProduto(e.target.value)
@@ -30,7 +26,6 @@ function GetProdutoPorNome() {
           <input type="text" onChange={handleChange}></input>
           <button onClick={obterProduto} value={produto} >Pesquisar</button>
 
-            
 			{produtos.map((prod) => (
 				<div key={prod.id} style={{
                     border: "1px solid black",

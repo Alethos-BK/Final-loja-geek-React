@@ -11,7 +11,6 @@ function PostCategoria(){
     const HandleChangeDescricao = (e) => setDescricao(e.currentTarget.value);
 
 
-
     const adicionarCategoria = () => {
         const novo = {
             nome,
@@ -24,18 +23,21 @@ function PostCategoria(){
     }
 
     return (
-        <>
-        <h1>Adicionar categoria</h1>
+        <div>
+        <center>
+        <h2>Adicionar Categoria</h2>
 
         <label htmlFor="nome">Nome</label>
-            <input type="text" name="nome" value={nome} onChange={HandleChangeNome}/>
+        <p> <input type="text" name="nome" value={nome} onChange={HandleChangeNome}/> </p>
 
             <label htmlFor="idade">Descrição</label>
-            <input type="text" name="descricao" value={descricao}  onChange={HandleChangeDescricao} />
+            <p> <input type="text" name="descricao" value={descricao}  onChange={HandleChangeDescricao} /> </p>
 
-            <button onClick={adicionarCategoria}>Cadastrar categoria</button>
-        </>
+        
+            <button onClick={adicionarCategoria}>Adicionar categoria</button>
+            </center>
+        </div>
     )
 }
 
-export default PostCategoria
+export default PostCategoria;
