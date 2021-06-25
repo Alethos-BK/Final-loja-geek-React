@@ -11,7 +11,6 @@ function PutProduto () {
     const [estoque, setEstoque] = React.useState('');
     const [imagem, setImagem] = React.useState('');
  
-
     const atualizarProduto = () => {
         const novo = {
             nome,

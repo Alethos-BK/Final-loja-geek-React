@@ -19,7 +19,8 @@ function PutCategoria() {
           descricao
         }
         axios.put(`http://localhost:8080/api/categorias/${id}`, novo).then((response) => setCategoria(response.data))
-     
+        
+        
     }
 
     return (

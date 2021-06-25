@@ -21,7 +21,7 @@ import DeleteCategoria from "./Produto/categoria/DeleteCategoria";
 
 //TODO:fazer uns alerta !!
 function App() {
-
+  
   return (
     <>
     <Title />
@@ -45,7 +45,7 @@ function App() {
               <Nav.Link> <Link to="./pedido/Pedido">Pedido</Link></Nav.Link>
             </Nav>
 
-          <SimplePopover/>
+          <SimplePopover />
         </Navbar.Collapse>
         </Container>
         </Navbar>

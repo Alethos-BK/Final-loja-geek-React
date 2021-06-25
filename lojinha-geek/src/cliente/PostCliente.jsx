@@ -28,6 +28,8 @@ function PostCliente () {
           console.log(response.data);
           setCliente(response.data);
         });
+
+        alert(`Cliente ${nome} cadastrado com sucesso!`)
     }
 
     return (
