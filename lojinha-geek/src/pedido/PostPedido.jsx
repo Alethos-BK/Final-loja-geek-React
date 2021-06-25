@@ -29,17 +29,17 @@ function PostPedido(props) {
        
     
         const criarPedido = () => {
-            setDataDoPedido = "2021-06-25"
-            setPedidoFinalizado = "nao"
-            setProdutoId = [...props.listaIds]
-            adicionarPedido()
+            // data
+            // setPedidoFinalizado = "nao"
+            // setProdutoId = [...props.listaIds]
+            // // adicionarPedido() 
         }
     return (
       <>
         <label htmlFor="idCliente">Digite seu id: </label>
         <input type="text" name="idCliente" value={idCliente} onChange={(e) => seIdCliente(e.currentTarget.value)} />
       
-        <button onClick={criarPedido}>Finalizar pedido</button>
+        <button onClick={criarPedido}> Finalizar pedido</button>
         
       </>
     )

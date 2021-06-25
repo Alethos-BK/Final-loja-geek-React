@@ -7,18 +7,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
 import Produto from './produto/Produto';
 
-import Cliente from './cliente/Cliente';
+import Title from './Title';
 
-import GetClientePorId from './cliente/GetClientePorId';
-import GetProdutoPorCategoria from './produto/GetProdutoPorCategoria';
-// import Canecas from './Canecas';
-// import Roupas from './Roupas';
-// import Funkos from './Funkos';
+import PostCliente from './cliente/PostCliente';
 
-function App() {
+function App(props) {
 
   return (
     <>
+
+    <Title />
     <BrowserRouter> 
       <Navbar bg="light" expand="lg">
         <Container>
@@ -26,24 +24,18 @@ function App() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
+
             <Nav.Link> <Link to="/Home">Inicio</Link></Nav.Link>
-              <Nav.Link> <Link to="./produto/Produto">Produto</Link></Nav.Link>
-              <Nav.Link> <Link to="./cliente/Cliente">Cliente</Link></Nav.Link>
+              <Nav.Link> <Link to="/produto/Produto">Produto</Link></Nav.Link>
+              <Nav.Link> <Link to="/cliente/PostCliente">Registre-se</Link></Nav.Link>
               
               <NavDropdown title="Categoria" id="basic-nav-dropdown" >
                  <NavDropdown.Item> <Link to= "/produto/categoria/Categoria"> Categoria </Link></NavDropdown.Item>
-                
               </NavDropdown> 
             </Nav>
-            <Form inline>
-            <FormControl type="text" placeholder="Pesquisar" className="mr-sm-2" />
-            <Button variant="outline-success">ENTER</Button>
-          </Form>
         </Navbar.Collapse>
         </Container>
         </Navbar>
-        
-        
         
         <Switch>
               <Route path="/Home" exact>
@@ -54,9 +46,19 @@ function App() {
                 <Produto/>
              </Route>
     
-                <Route path="/produto/categoria/Categoria" exact>
+              <Route path="/produto/categoria/Categoria" exact>
                 <Categoria/>
+              </Route>
+
+            <Route path="/cliente/PostCliente" exact>
+                <PostCliente/>
             </Route>
+
+            <Route path={`/produto/GetProdutoPorNome`} exact>
+              <Produto />
+            </Route>
+
+            
 {/*     
              <Route path="/Canecas" exact>
                 <Canecas/>
@@ -72,8 +74,12 @@ function App() {
                
        </Switch>
           </BrowserRouter>
-                <Cliente />
+
           
+
+
+
+          {/* <NomePagina /> */}
       </>
       );
     

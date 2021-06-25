@@ -2,17 +2,19 @@ import React from 'react';
 import GetProduto from './GetProduto';
 import GetProdutoPorId from './GetProdutoPorId';
 import PostProduto from './PostProduto';
-import GetProdutoPorCategoria from './GetProdutoPorCategoria';
+import GetProdutoNome from './GetProdutoPorNome';
 
 function Produto(){
   return(
     <>  
-<<<<<<< HEAD
+      <GetProdutoNome />
       <GetProduto />
-=======
-      <GetProduto/>
+
+      {/* <GetProdutoPorId /> */}
+
+      {/* <PostProduto /> */}
+
       
->>>>>>> acdca686b5f1c4f14fa050e9f7cab51833d1b7d3
     </>
 
   )

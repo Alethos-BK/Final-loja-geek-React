@@ -37,16 +37,16 @@ function Carrinho(props) {
 
   return (
     <div>
-      <h2>
+      {/* <h2>
         🛒 Carrinho <span style={badge}>{total || "0"}</span>
-      </h2>
+      </h2> */}
 
       <button onClick={() => addCarrinho(produtos)}>add</button>
 
 
-      <button onClick={PostProduto}></button>
+      <button onClick={PostProduto}>aa</button>
      
-    <PostPedido listaIds={produtosId}/>
+    
 
     </div>
 

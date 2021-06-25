@@ -20,7 +20,6 @@ function GetProduto(){
 
   const obterTodososProdutos = () => {
 		axios.get(`http://localhost:8080/api/produtos`).then((response) =>{
-			console.log(response.status)
 			setProduto(response.data)
 		});
 	}
@@ -59,7 +58,7 @@ function GetProduto(){
           <h4>R${prod.preco}</h4>
           Data de cadastro: {prod.dataDeCadastro} 
 
-          <Carrinho id={prod.id}/>
+          <button ></button>
           </div>
 			))}
 		</>
