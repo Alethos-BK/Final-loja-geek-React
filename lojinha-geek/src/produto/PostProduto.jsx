@@ -72,7 +72,7 @@ function PostProduto() {
                 {categoria.map((categ) => {
                     console.log("ergwgrt5")
                     return (
-                        (<option value={categ.id} selected> {categ.nome}"</option>)
+                        (<option key= {categ.id} value={categ.id} selected> {categ.nome}"</option>)
                     )
                 }
 

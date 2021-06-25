@@ -8,10 +8,8 @@ function Categoria(){
   
   return(
     <>
-      <GetCategoria/>
-      <PostCategoria/>
-      <PutCategoria/>
-      <DeleteCategoria/>
+    <p></p>
+     <GetCategoria/>
     </>
   )
 }
