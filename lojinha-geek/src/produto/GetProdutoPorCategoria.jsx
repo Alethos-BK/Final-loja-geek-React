@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 
-function GetProdutoPorCategoria(){
+function GetProdutoPorCategoria(props){
 
     const [ produto, setProduto] = useState({});
     const [categoria, setCategoria] = useState([]);
@@ -27,23 +27,33 @@ function GetProdutoPorCategoria(){
  
 
     return (
+
+      //mapeie categoria e escreva categorias
       <>
-        <select name="select" onChange={(e) => setCategoriaId(e.currentTarget.value)}>
+
+      {/* {categoria.map((categ) => (
+        categ.nome
+
+
+      ))} */}
+
+        <select value=""   name="select" onChange={(e) => setCategoriaId(e.currentTarget.value)}>
                 
         {categoria.map((categ) =>
         {
         return(
-          ( <option value= {categ.id} selected> {categ.nome}"</option> )
+          ( <option key= {categ.id} value= {categ.id}  selected> Categoria: {categ.nome}"</option> )
        
         )
         }        
         )}
+
         
     </select>
+      <button onClick={obterTodososProdutosDaCategoria}>Categoria</button>
 
-    <button onClick={obterTodososProdutosDaCategoria}>Mostrar</button>
 
-  	{produto.map((prod) => (
+    {/* {produto.map((prod) => (
 				<p key={prod.id}> 
                 Nome: {prod.nome} 
                 Descricão: {prod.descricao}
@@ -52,7 +62,7 @@ function GetProdutoPorCategoria(){
                 Data de cadastro: {prod.dataDeCadastro} 
                 Categoria: { prod.categoria ? prod.categoria.nome : "Produto sem categoria"}
                 </p>
-			))}
+			))} */}
   </>
     )
 

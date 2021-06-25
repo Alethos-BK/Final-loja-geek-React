@@ -13,13 +13,16 @@ function GetCategoria(){
 	}
 
 	return (
-		<>
-		  <h1>Categorias</h1>
-			<button onClick={obterTodasAsCategorias}> Categoria</button>
+		
+		  <div>
+		 <center> <h2>Categorias</h2></center>
+		 
 			{categoria.map((cat) => (
-				<p key={cat.id}> Nome: {cat.nome} Descricão: {cat.descricao}</p>
-			))}
-		</>
+				<p  key={cat.id}>  Nome: {cat.nome} Descricão: {cat.descricao}
+				</p>
+			))}	
+		</div>
+		
 	)
 }
 

@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
 import Produto from './produto/Produto';
 import GetClientePorId from './cliente/GetClientePorId';
+import GetProdutoPorCategoria from './produto/GetProdutoPorCategoria';
 // import Canecas from './Canecas';
 // import Roupas from './Roupas';
 // import Funkos from './Funkos';
@@ -27,12 +28,10 @@ function App() {
             <Nav.Link> <Link to="/Home">Inicio</Link></Nav.Link>
               <Nav.Link> <Link to="./produto/Produto">Produto</Link></Nav.Link>
               
-    
-              <NavDropdown title="Categoria" id="basic-nav-dropdown">
-                 <NavDropdown.Item> <Link to= "/Canecas">Canecas</Link></NavDropdown.Item>
-                <NavDropdown.Item><Link to= "/Roupas">Roupas</Link></NavDropdown.Item>
-                <NavDropdown.Item ><Link to="/Funkos">Funkos</Link></NavDropdown.Item>
-              </NavDropdown>
+              <NavDropdown title="Categoria" id="basic-nav-dropdown" >
+                 <NavDropdown.Item> <Link to= "/produto/categoria/Categoria"> Categoria </Link></NavDropdown.Item>
+                
+              </NavDropdown> 
             </Nav>
             <Form inline>
             <FormControl type="text" placeholder="Pesquisar" className="mr-sm-2" />
@@ -49,15 +48,15 @@ function App() {
                 <Home />
             </Route>
                 
-              <Route path="./produto/Produto" exact>
+              <Route path="/produto/Produto" exact>
                 <Produto/>
              </Route>
     
-                <Route path="/Categoria" exact>
+                <Route path="/produto/categoria/Categoria" exact>
                 <Categoria/>
             </Route>
-    
-                {/* <Route path="/Canecas" exact>
+{/*     
+             <Route path="/Canecas" exact>
                 <Canecas/>
             </Route>
     
@@ -66,14 +65,11 @@ function App() {
             </Route>
     
             <Route path="/Funkos" exact>
-                <Funkos/>
-            </Route>
-               */}
+                <Funkos/> */}
+            {/* </Route> */}
+               
        </Switch>
           </BrowserRouter>
-
-          {/* <Produto /> */}
-          <GetClientePorId />
 
       </>
       );
