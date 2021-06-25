@@ -36,9 +36,7 @@ function PostPedido(props) {
         }
     return (
       <>
-        <label htmlFor="idCliente">Digite seu id: </label>
-        <input type="text" name="idCliente" value={idCliente} onChange={(e) => seIdCliente(e.currentTarget.value)} />
-      
+       
         <button onClick={criarPedido}>Finalizar pedido</button>
         
       </>

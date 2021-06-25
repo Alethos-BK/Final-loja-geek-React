@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Button, Form} from 'react-bootstrap';
 
 function PostProduto() {
     const [produto, setProduto] = useState({});
-
 
     const [nome, setNome] = useState('');
     const [descricao, setDescricao] = useState('');
@@ -27,8 +27,6 @@ function PostProduto() {
     //  const categoriaExiste = categoria.find((categ) => (
     // categoria ? categ.id : 1
 
-
-
     const adicionarProduto = () => {
         const novo = {
             nome,
@@ -47,8 +45,68 @@ function PostProduto() {
 
     return (
         <>
+            <Form>
+                <Form.Group controlId="nome">
+                    <Form.Label>Nome</Form.Label>
+                    <Form.Control type="text" onChange={(e) => setNome(e.currentTarget.value)} placeholder="Enter Nome" />
+                    <Form.Text className="text-muted">
 
-            <label htmlFor="nome">Nome</label>
+                    </Form.Text>
+                </Form.Group>
+
+                <Form.Group controlId="descricao">
+                    <Form.Label>Descrição</Form.Label>
+                    <Form.Control type="text" onChange={(e) => setDescricao(e.currentTarget.value)} placeholder="Descricao: " />
+                </Form.Group>
+
+                <Form.Group controlId="preco">
+                    <Form.Label>Preço: </Form.Label>
+                    <Form.Control onChange={(e) => setPreco(e.currentTarget.value)} placeholder="Preco: " />
+                    <Form.Text className="text-muted">
+
+                    </Form.Text>
+                </Form.Group>
+
+                <Form.Group controlId="estoque">
+                    <Form.Label>Estoque</Form.Label>
+                    <Form.Control type="number" onChange={(e) => setEstoque(e.currentTarget.value)} placeholder="Estoque: " />
+                    <Form.Text className="text-muted"> 
+
+                    </Form.Text>
+                </Form.Group>
+
+                <Form.Group controlId="dataDeCadastro">
+                    <Form.Label>Data de cadastro: (yyyy-MM-dd)</Form.Label>
+                    <Form.Control type="text" onChange={(e) => setDataDeCadastro(e.currentTarget.value)} placeholder="Data de cdastro: " />
+                    <Form.Text className="text-muted">
+
+                </Form.Text>
+                </Form.Group>
+
+                <select name="select" onChange={(e) => setCategoriaId(e.currentTarget.value)}>
+
+                    {categoria.map((categ) => {
+                    console.log("ergwgrt5")
+                    return (
+                    (<option key= {categ.id} value={categ.id} selected> {categ.nome}"</option>)
+                    )
+                }
+
+                )}
+
+                </select>
+
+                <Button onClick={adicionarProduto} variant="primary" type="submit">
+                    Cadastrar
+                </Button>
+                </Form>
+
+
+
+
+
+
+            {/* <label htmlFor="nome">Nome</label>
             <input type="text" name="nome" value={nome} onChange={(e) => setNome(e.currentTarget.value)} />
 
             <label htmlFor="descricao">descricao</label>
@@ -66,22 +124,7 @@ function PostProduto() {
             <label htmlFor="dataDeCadastro">dataDeCadastro</label>
             <input type="text" name="dataDeCadastro" value={dataDeCadastro} onChange={(e) => setDataDeCadastro(e.currentTarget.value)} />
 
-
-            <select name="select" onChange={(e) => setCategoriaId(e.currentTarget.value)}>
-
-                {categoria.map((categ) => {
-                    console.log("ergwgrt5")
-                    return (
-                        (<option key= {categ.id} value={categ.id} selected> {categ.nome}"</option>)
-                    )
-                }
-
-
-                )}
-
-            </select>
-
-            <button onClick={adicionarProduto}>Enviar</button>
+            <button onClick={adicionarProduto}>Enviar</button> */}
         </>
     );
 }

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function GetProdutoPorNome() {
+function GetProdutoPorNome(props) {
 
     const [produtos, setProdutos] = useState([]);
-    const [nome, setNome] = useState('');
+    const [nome, setNome] = useState('blusa');
 
     const obterProduto = () => {
         axios.get(`http://localhost:8080/api/produtos/${nome}`).then((response) => {
@@ -16,7 +16,7 @@ function GetProdutoPorNome() {
     const handleChange = (e) => setNome(e.target.value)
     return (
         <>
-		  <h1 style={{textAlign: "center"}}>Obter todos os produtos</h1>
+		  <h1 style={{textAlign: "center"}}>Obter produto por nome</h1>
 			{/* <button onClick={obterTodososProdutos}> Produtos</button> */}
 			{produtos.map((prod) => (
 				<div key={prod.id} style={{

@@ -8,7 +8,7 @@ function Categoria(){
   
   return(
     <>
-    <p></p>
+    
      <GetCategoria/>
     </>
   )
