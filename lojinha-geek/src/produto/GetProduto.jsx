@@ -1,5 +1,6 @@
 import React, { useEffect, useState }  from 'react';
 import axios from 'axios'
+import Carrinho from '../pedido/Carrinho';
 
 function GetProduto(){
 
@@ -57,6 +58,8 @@ function GetProduto(){
           <img src={prod.imagem} alt={prod.nome} />
           <h4>R${prod.preco}</h4>
           Data de cadastro: {prod.dataDeCadastro} 
+
+          <Carrinho id={prod.id}/>
           </div>
 			))}
 		</>

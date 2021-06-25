@@ -53,6 +53,7 @@ function GetProdutoPorCategoria(props){
       <button onClick={obterTodososProdutosDaCategoria}>Categoria</button>
 
 
+<<<<<<< HEAD
 
   	  {produto.map((p) => (<p>a</p>))}
 
@@ -67,6 +68,9 @@ function GetProdutoPorCategoria(props){
                 </p>
 			))} */}
 
+=======
+  	  {produto.map((p) => (<p>a</p>))}
+>>>>>>> acdca686b5f1c4f14fa050e9f7cab51833d1b7d3
   </>
     )
 
