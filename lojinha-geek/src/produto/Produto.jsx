@@ -4,12 +4,11 @@ import GetProdutoPorId from './GetProdutoPorId';
 import PostProduto from './PostProduto';
 import GetProdutoPorCategoria from './GetProdutoPorCategoria';
 
-
 function Produto(){
   return(
     <>  
-      <GetProduto />
-      {/* <ProdutoTeste /> */}
+      <GetProduto/>
+      
     </>
 
   )
