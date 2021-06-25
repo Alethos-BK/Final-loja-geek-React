@@ -1,10 +1,7 @@
 import React from 'react';
 import GetProduto from './GetProduto';
-import GetProdutoPorId from './GetProdutoPorId';
-import PostProduto from './PostProduto';
 import GetProdutoPorCategoria from './GetProdutoPorCategoria';
 import { Link } from 'react-router-dom';
-import GetProdutoPorNome from './GetProdutoPorNome';
 import styled from "styled-components";
 
 function Produto() {
@@ -30,6 +27,8 @@ function Produto() {
     <>
       <Link to="/PostProduto"><Botao>Cadastrar Produto</Botao></Link>
       <GetProdutoPorCategoria/>
+
+      <h1>----------------------------------------------------------------------------------------------------</h1>
       <GetProduto />
 
 

@@ -46,10 +46,10 @@ function GetProduto() {
         <div key={prod.id} style={{
           border: "1px solid black",
           textAlign: "center",
-          marginTop: "10px",
-          fontFamily: "Roboto"
-        }}>
-          <h3>{prod.nome}</h3>
+          marginTop: "10px"
+        }}> 
+        
+          <h3>{prod.nome}</h3> 
           <h1>Id {prod.id}</h1>
           Descricão: {prod.descricao}
           <h6>Em stoque:{prod.estoque}</h6>

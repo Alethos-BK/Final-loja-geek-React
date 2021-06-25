@@ -26,7 +26,7 @@ function PostPedido(props) {
             });
     }
 
-       
+       /*
     
         const criarPedido = () => {
             setDataDoPedido = "2021-06-25"
@@ -34,6 +34,7 @@ function PostPedido(props) {
             setProdutoId = [...props.listaIds]
             adicionarPedido()
         }
+        */
     return (
       <>
        
@@ -43,4 +44,4 @@ function PostPedido(props) {
     )
 }
 
-export default PostPedido
+export default PostPedido;

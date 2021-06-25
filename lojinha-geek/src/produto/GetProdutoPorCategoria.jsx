@@ -30,7 +30,7 @@ function GetProdutoPorCategoria(props){
     return (
 
       //mapeie categoria e escreva categorias
-      <>
+    <>
 
       {/* {categoria.map((categ) => (
         categ.nome
@@ -72,6 +72,7 @@ function GetProdutoPorCategoria(props){
           <Carrinho id={prod.id}/>
           </div>
 			))}
+
   </>
     )
 
@@ -79,4 +80,4 @@ function GetProdutoPorCategoria(props){
     
 }
 
-export default GetProdutoPorCategoria
+export default GetProdutoPorCategoria;

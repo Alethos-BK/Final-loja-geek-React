@@ -7,16 +7,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
 import Produto from './produto/Produto';
 import Pedido from './pedido/Pedido';
-import GetClientePorId from './cliente/GetClientePorId';
-import GetProdutoPorCategoria from './produto/GetProdutoPorCategoria';
 import SimplePopover from './BotaoCarrinho';
 import PostProduto from './produto/PostProduto';
 import GetProdutoPorNome from './produto/GetProdutoPorNome';
-
+import PostCategoria from "./Produto/categoria/PostCategoria";
+import PutCategoria from "./Produto/categoria/PutCategoria";
+import DeleteCategoria from "./Produto/categoria/DeleteCategoria";
 // import Canecas from './Canecas';
 // import Roupas from './Roupas';
 // import Funkos from './Funkos';
 
+//TODO:fazer uns alerta !!
 function App() {
 
   return (
@@ -33,15 +34,14 @@ function App() {
               
               <NavDropdown title="Categoria" id="basic-nav-dropdown" >
                  <NavDropdown.Item> <Link to= "/produto/categoria/Categoria"> Categoria </Link></NavDropdown.Item>
-                
               </NavDropdown> 
 
               <Nav.Link> <Link to="./pedido/Pedido">Pedido</Link></Nav.Link>
             </Nav>
-            <Form inline>
+            {/* <Form inline>
             <FormControl type="text" placeholder="Pesquisar" className="mr-sm-2" />
             <Button variant="outline-success">ENTER</Button>
-          </Form>
+          </Form> */}
           <SimplePopover/>
         </Navbar.Collapse>
         </Container>
@@ -70,6 +70,18 @@ function App() {
             <Route path="/produtopornome/" exact>
               <GetProdutoPorNome/>
             </Route>
+
+            <Route path="/Adicionar"exact>
+                <PostCategoria />
+            </Route>
+
+            <Route path="/Atualizar" exact>
+                <PutCategoria />
+            </Route>
+
+            <Route path="/Apagar" exact>
+                <DeleteCategoria />
+            </Route>
 {/*     
              <Route path="/Canecas" exact>
                 <Canecas/>
@@ -94,4 +106,3 @@ function App() {
     }
     
     export default App;
-      

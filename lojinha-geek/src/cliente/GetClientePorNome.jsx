@@ -20,7 +20,12 @@ function GetClientePorNome() {
         Nome
             <input type="text" value={nome} onChange={handleChange}/>
             <button onClick={obterCliente}>Obter CLiente Por Nome</button>
-            {cliente.map((c)=> (<h2>{c.nome}</h2>))}
+            {cliente.map((c)=> (
+                <div>
+                    <h2>{c.nome}</h2>
+                    <h2>{c.email}</h2>
+                </div>
+            ))}
         </div>
     );
 }
