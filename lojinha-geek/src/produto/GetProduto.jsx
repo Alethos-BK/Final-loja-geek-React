@@ -14,6 +14,7 @@ function GetProduto(){
 // 		});
 // 	}
 
+ 
   
 
   const obterTodososProdutos = () => {
@@ -22,6 +23,8 @@ function GetProduto(){
 			setProduto(response.data)
 		});
 	}
+
+  React.useEffect(obterTodososProdutos, [])
 
     // const obterNomeCategoria = (prod) => {
     //     let guardarCategoria =  categoria.find((categ) => categ.id == prod.id )
@@ -37,17 +40,23 @@ function GetProduto(){
 
 	return (
 		<>
-		  <h1>Obter todos os produtos</h1>
-			<button onClick={obterTodososProdutos}> Produtos</button>
+		  <h1 style={{textAlign: "center"}}>Obter todos os produtos</h1>
+			{/* <button onClick={obterTodososProdutos}> Produtos</button> */}
 			{produto.map((prod) => (
-				<p key={prod.id}> 
-                Nome: {prod.nome} 
-                Descricão: {prod.descricao}
-                Preço: R${prod.preco} 
-                Estoque: {prod.estoque} 
-                Data de cadastro: {prod.dataDeCadastro} 
-                Categoria: { prod.categoria ? prod.categoria.nome : "Produto sem categoria"}
-                </p>
+				<div key={prod.id} style={{
+          border: "1px solid black",
+          textAlign: "center",
+          marginTop: "10px"
+        }}> 
+          <h3>{prod.nome}</h3> 
+          <h1>Id {prod.id}</h1>
+          Descricão: {prod.descricao}
+          <h6>Em stoque:{prod.estoque}</h6> 
+          <h6>Categoria: { prod.categoria ? prod.categoria.nome : "Produto sem categoria"}</h6>
+          <img src={prod.imagem} alt={prod.nome} />
+          <h4>R${prod.preco}</h4>
+          Data de cadastro: {prod.dataDeCadastro} 
+          </div>
 			))}
 		</>
 	)
