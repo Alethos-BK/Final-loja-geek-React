@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
 import Produto from './produto/Produto';
 
+import Cliente from './cliente/Cliente';
+
 import GetClientePorId from './cliente/GetClientePorId';
 import GetProdutoPorCategoria from './produto/GetProdutoPorCategoria';
 // import Canecas from './Canecas';
@@ -26,6 +28,7 @@ function App() {
             <Nav className="me-auto">
             <Nav.Link> <Link to="/Home">Inicio</Link></Nav.Link>
               <Nav.Link> <Link to="./produto/Produto">Produto</Link></Nav.Link>
+              <Nav.Link> <Link to="./cliente/Cliente">Cliente</Link></Nav.Link>
               
               <NavDropdown title="Categoria" id="basic-nav-dropdown" >
                  <NavDropdown.Item> <Link to= "/produto/categoria/Categoria"> Categoria </Link></NavDropdown.Item>
@@ -69,8 +72,7 @@ function App() {
                
        </Switch>
           </BrowserRouter>
-
-          <Produto />
+                <Cliente />
           
       </>
       );

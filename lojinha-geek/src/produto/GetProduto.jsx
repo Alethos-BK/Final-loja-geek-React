@@ -48,6 +48,7 @@ function GetProduto(){
           textAlign: "center",
           marginTop: "10px"
         }}> 
+        
           <h3>{prod.nome}</h3> 
           <h1>Id {prod.id}</h1>
           Descricão: {prod.descricao}

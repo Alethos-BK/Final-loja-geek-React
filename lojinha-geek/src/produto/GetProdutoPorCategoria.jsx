@@ -53,9 +53,9 @@ function GetProdutoPorCategoria(props){
       <button onClick={obterTodososProdutosDaCategoria}>Categoria</button>
 
 
-<<<<<<< HEAD
+
   	  {produto.map((p) => (<p>a</p>))}
-=======
+
     {/* {produto.map((prod) => (
 				<p key={prod.id}> 
                 Nome: {prod.nome} 
@@ -66,7 +66,7 @@ function GetProdutoPorCategoria(props){
                 Categoria: { prod.categoria ? prod.categoria.nome : "Produto sem categoria"}
                 </p>
 			))} */}
->>>>>>> 050848a362fdc8939f086be204a5a77251168ff8
+
   </>
     )
 
@@ -74,4 +74,4 @@ function GetProdutoPorCategoria(props){
     
 }
 
-export default GetProdutoPorCategoria
+export default GetProdutoPorCategoria;
