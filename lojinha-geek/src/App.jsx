@@ -10,8 +10,6 @@ import Produto from './produto/Produto';
 // import Roupas from './Roupas';
 // import Funkos from './Funkos';
 
-
-//TODO:fazer uns alerta !!
 function App() {
 
   return (
