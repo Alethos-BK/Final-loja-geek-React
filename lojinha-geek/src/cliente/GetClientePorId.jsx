@@ -32,13 +32,10 @@ function GetClientePorId() {
         </div>
     );
 
-<<<<<<< HEAD
+
         
     
- }
-=======
-
->>>>>>> acdca686b5f1c4f14fa050e9f7cab51833d1b7d3
+ 
 
  }
 

@@ -6,15 +6,16 @@ import { Button, Navbar, NavDropdown, Container, Nav, FormControl, Form} from 'r
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
 import Produto from './produto/Produto';
-
-import Cliente from './cliente/Cliente';
-
 import GetClientePorId from './cliente/GetClientePorId';
 import GetProdutoPorCategoria from './produto/GetProdutoPorCategoria';
+import PostCategoria from "./Produto/categoria/PostCategoria";
+import PutCategoria from "./Produto/categoria/PutCategoria";
+import DeleteCategoria from "./Produto/categoria/DeleteCategoria";
 // import Canecas from './Canecas';
 // import Roupas from './Roupas';
 // import Funkos from './Funkos';
 
+//TODO:fazer uns alerta !!
 function App() {
 
   return (
@@ -28,11 +29,8 @@ function App() {
             <Nav className="me-auto">
             <Nav.Link> <Link to="/Home">Inicio</Link></Nav.Link>
               <Nav.Link> <Link to="./produto/Produto">Produto</Link></Nav.Link>
-              <Nav.Link> <Link to="./cliente/Cliente">Cliente</Link></Nav.Link>
-              
               <NavDropdown title="Categoria" id="basic-nav-dropdown" >
                  <NavDropdown.Item> <Link to= "/produto/categoria/Categoria"> Categoria </Link></NavDropdown.Item>
-                
               </NavDropdown> 
             </Nav>
             <Form inline>
@@ -57,6 +55,18 @@ function App() {
                 <Route path="/produto/categoria/Categoria" exact>
                 <Categoria/>
             </Route>
+
+            <Route path="/Adicionar"exact>
+                <PostCategoria />
+            </Route>
+
+            <Route path="/Atualizar" exact>
+                <PutCategoria />
+            </Route>
+
+            <Route path="/Apagar" exact>
+                <DeleteCategoria />
+            </Route>
 {/*     
              <Route path="/Canecas" exact>
                 <Canecas/>
@@ -72,12 +82,10 @@ function App() {
                
        </Switch>
           </BrowserRouter>
-                <Cliente />
-          
+
       </>
       );
     
     }
     
     export default App;
-      

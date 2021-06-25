@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+// import EstiloCategoria from "./EstiloCategoria";
 
 function PutCategoria() {
     const [categoria, setCategoria] = useState({});
@@ -22,21 +23,26 @@ function PutCategoria() {
     }
 
     return (
-      <>
-        <h1>Atualizar Categoria</h1>
+    
+      <center>
+        
+        <h2>Atualizar Categoria</h2>
       
         <label htmlFor="id">Id</label>
-        <input type="number" name="id" value={id}  onChange={HandleChangeId}/> 
+        <p><input type="number" name="id" value={id}  onChange={HandleChangeId}/> </p>
       
         <label htmlFor="nome">Nome</label>
-        <input type="text" name="nome" value={nome} onChange={HandleChangeNome}/>
+        <p> <input type="text" name="nome" value={nome} onChange={HandleChangeNome}/></p>
 
         <label htmlFor="descricao">Descricao</label>
-        <input type="text" name="descricao" value={descricao} onChange={HandleChangeDescricao}/>
+        <p> <input type="text" name="descricao" value={descricao} onChange={HandleChangeDescricao}/></p>
 
         <button onClick={atualizarCategoria}>Atualizar categoria</button>
-      </>
-    )
-}
+      
+        </center>
+
+   
+        )
+ }
 
 export default PutCategoria;
